@@ -1,0 +1,86 @@
+---
+const version = 'v1.0.1';
+const releaseDate = '1 Maret 2025';
+const baseRelease = 'https://github.com/wantox86/KangPaket/releases/latest/download';
+
+const platforms = [
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>`,
+    label: 'Download for Windows',
+    sub: '.exe installer',
+    href: `${baseRelease}/KangPaket.exe`,
+    primary: true,
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.581 19.049a10.95 10.95 0 0 0 1.419-5.367 10.957 10.957 0 0 0-3.22-7.795A10.954 10.954 0 0 0 12 3.001c-2.89 0-5.654 1.117-7.755 3.125A10.93 10.93 0 0 0 1 13.682a10.95 10.95 0 0 0 1.419 5.367L1 24l5.13-1.351a10.933 10.933 0 0 0 5.87 1.698 10.95 10.95 0 0 0 5.87-1.698L23 24zM12 21.549a9.134 9.134 0 0 1-4.649-1.265l-.332-.199-3.045.801.812-2.965-.218-.341A9.087 9.087 0 0 1 3 13.682c0-4.971 4.047-9.018 9.018-9.018 2.41 0 4.671.939 6.376 2.644a8.983 8.983 0 0 1 2.644 6.374c-.018 4.972-4.047 8.867-9.038 8.867zm4.985-6.797c-.271-.135-1.605-.794-1.854-.882-.248-.09-.43-.135-.611.135-.18.27-.701.882-.859 1.063-.159.18-.318.203-.589.068-.271-.135-1.145-.422-2.181-1.347-.806-.719-1.351-1.606-1.51-1.877-.159-.271-.018-.417.119-.552.122-.121.271-.315.407-.473.135-.158.18-.271.271-.451.09-.18.045-.338-.022-.473-.068-.135-.611-1.472-.838-2.016-.225-.54-.451-.473-.611-.473h-.521c-.18 0-.473.068-.721.338-.248.271-.946.922-.946 2.259 0 1.337.969 2.629 1.104 2.809.135.18 1.912 2.899 4.63 4.066.646.281 1.151.449 1.544.576.648.208 1.239.179 1.705.109.52-.078 1.605-.656 1.831-1.289.226-.633.226-1.175.158-1.289-.067-.112-.247-.18-.518-.315z"/></svg>`,
+    label: 'Download for Linux',
+    sub: 'binary executable',
+    href: `${baseRelease}/KangPaket`,
+    primary: false,
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>`,
+    label: 'Download for macOS',
+    sub: '.dmg disk image',
+    href: `${baseRelease}/KangPaket.dmg`,
+    primary: false,
+  },
+];
+---
+<section id="download" class="py-20 md:py-24">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 text-center">
+    <h2 class="text-3xl font-semibold text-gray-50 mb-4">Download KangPaket</h2>
+    <p class="text-gray-400 mb-3">
+      Versi terbaru: <span class="text-brand font-medium">{version}</span>
+      <span class="text-gray-600 mx-2">·</span>
+      <span class="text-gray-500 text-sm">{releaseDate}</span>
+    </p>
+    <p class="text-gray-500 text-sm mb-12">
+      Single-file binary, tidak perlu instalasi tambahan.
+    </p>
+
+    <!-- Download buttons -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+      {platforms.map((p) => (
+        <a
+          href={p.href}
+          class={
+            p.primary
+              ? 'flex items-center gap-3 rounded-lg bg-brand hover:bg-brand-dark text-gray-950 font-medium px-6 py-3.5 transition-colors w-full sm:w-auto justify-center'
+              : 'flex items-center gap-3 rounded-lg border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-gray-100 px-6 py-3.5 transition-colors w-full sm:w-auto justify-center'
+          }
+        >
+          <Fragment set:html={p.icon} />
+          <span class="flex flex-col text-left">
+            <span class="text-sm font-medium leading-tight">{p.label}</span>
+            <span class={`text-xs leading-tight ${p.primary ? 'text-gray-700' : 'text-gray-500'}`}>{p.sub}</span>
+          </span>
+        </a>
+      ))}
+    </div>
+
+    <!-- SmartScreen warning -->
+    <div class="mx-auto max-w-xl rounded-xl border border-yellow-900/40 bg-yellow-950/20 px-5 py-4 text-sm text-yellow-200/70 text-left mb-8">
+      <p class="font-medium text-yellow-300/80 mb-1">Windows SmartScreen Warning</p>
+      <p>
+        Mungkin muncul peringatan SmartScreen saat pertama kali menjalankan — klik
+        <span class="font-medium text-yellow-200">"More info"</span> →
+        <span class="font-medium text-yellow-200">"Run anyway"</span>.
+        Ini karena app belum code-signed. Source code tersedia di GitHub untuk diverifikasi.
+      </p>
+    </div>
+
+    <!-- Link all releases -->
+    <a
+      href="https://github.com/wantox86/KangPaket/releases"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-300 transition-colors"
+    >
+      Lihat semua versi di GitHub Releases
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+      </svg>
+    </a>
+  </div>
+</section>

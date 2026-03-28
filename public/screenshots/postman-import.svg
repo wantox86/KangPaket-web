@@ -1,0 +1,6 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'>
+  <rect width='800' height='500' fill='#111827'/>
+  <rect x='1' y='1' width='798' height='498' fill='none' stroke='#1f2937' stroke-width='2'/>
+  <text x='400' y='240' font-family='Inter,sans-serif' font-size='28' fill='#4b5563' text-anchor='middle'>Postman Import</text>
+  <text x='400' y='280' font-family='Inter,sans-serif' font-size='18' fill='#374151' text-anchor='middle'>Screenshot placeholder</text>
+</svg>

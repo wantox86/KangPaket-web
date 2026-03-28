@@ -1,0 +1,7 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'>
+  <rect width='1200' height='630' fill='#030712'/>
+  <rect x='1' y='1' width='1198' height='628' fill='none' stroke='#1f2937' stroke-width='2'/>
+  <text x='600' y='280' font-family='Inter,sans-serif' font-size='72' font-weight='600' fill='#49cc90' text-anchor='middle'>KangPaket</text>
+  <text x='600' y='360' font-family='Inter,sans-serif' font-size='32' fill='#9ca3af' text-anchor='middle'>API Client Ringan untuk Tim Internal</text>
+  <text x='600' y='420' font-family='Inter,sans-serif' font-size='24' fill='#4b5563' text-anchor='middle'>Alternatif Postman. Offline. Open Source.</text>
+</svg>

@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import ChangelogEntry from '../components/ChangelogEntry.astro';
+---
+<BaseLayout
+  title="Changelog"
+  description="Riwayat perubahan dan release notes KangPaket."
+>
+  <Navbar />
+  <main class="mx-auto max-w-2xl px-4 sm:px-6 py-16 md:py-24">
+    <div class="mb-12">
+      <h1 class="text-4xl font-semibold text-gray-50 mb-3">Changelog</h1>
+      <p class="text-gray-400">
+        Riwayat perubahan KangPaket. Lihat semua release di
+        <a
+          href="https://github.com/wantox86/KangPaket/releases"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-brand hover:text-brand-dark transition-colors"
+        >GitHub Releases</a>.
+      </p>
+    </div>
+
+    <div class="relative">
+      <ChangelogEntry version="v1.0.1" date="1 Maret 2025">
+        <ul>
+          <li>Fix: PyInstaller bundle tidak menyertakan customtkinter</li>
+          <li>Fix: httpx hidden import pada Windows build</li>
+        </ul>
+      </ChangelogEntry>
+
+      <ChangelogEntry version="v1.0.0" date="15 Februari 2025">
+        <ul>
+          <li>Initial release</li>
+          <li>HTTP request builder — semua method, auth, body types</li>
+          <li>Collection Runner dengan 7 assertions</li>
+          <li>Import dari Postman Collection v2.0 & v2.1</li>
+          <li>Export/import profil JSON</li>
+        </ul>
+      </ChangelogEntry>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
