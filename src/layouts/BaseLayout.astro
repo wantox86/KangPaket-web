@@ -6,16 +6,17 @@ interface Props {
 }
 const {
   title,
-  description = "API client desktop ringan untuk tim internal. Alternatif Postman offline.",
+  description = "Lightweight desktop API client for internal teams. An offline Postman alternative.",
   ogImage = "/KangPaket-web/og-image.png"
 } = Astro.props;
 
 const siteUrl = 'https://wantox86.github.io';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 const ogImageURL = new URL(ogImage, siteUrl);
 ---
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -32,7 +33,7 @@ const ogImageURL = new URL(ogImage, siteUrl);
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:site_name" content="KangPaket" />
-  <meta property="og:locale" content="id_ID" />
+  <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -41,8 +42,7 @@ const ogImageURL = new URL(ogImage, siteUrl);
   <meta name="twitter:image" content={ogImageURL} />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/KangPaket-web/favicon.png" />
-  <link rel="icon" href="/KangPaket-web/favicon.ico" />
+  <link rel="icon" type="image/png" href={`${base}/KangPaket-ico.png`} />
 
   <!-- Font: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
