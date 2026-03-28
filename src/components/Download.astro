@@ -75,12 +75,41 @@ const platforms = [
       href="https://github.com/wantox86/KangPaket/releases"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-300 transition-colors"
+      class="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-300 transition-colors mb-10"
     >
       Lihat semua versi di GitHub Releases
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
       </svg>
     </a>
+
+    <!-- Donation -->
+    <div class="flex flex-col items-center gap-2">
+      <p class="text-xs text-gray-600">If you find KangPaket useful, consider supporting the development</p>
+      <div id="trakteer-container"></div>
+    </div>
   </div>
 </section>
+<<<<<<< Updated upstream
+=======
+
+<script is:inline src="https://edge-cdn.trakteer.id/js/embed/trbtn.min.js?v=14-05-2025"></script>
+<script is:inline>
+  (function () {
+    var trbtnId = trbtn.init(
+      'Dukung Saya di Trakteer',
+      '#be1e2d',
+      'https://trakteer.id/wawan-setiawan2345678',
+      'https://edge-cdn.trakteer.id/images/embed/trbtn-icon.png?v=14-05-2025',
+      '40'
+    );
+    trbtn.draw(trbtnId);
+    // Move rendered button into our container
+    var container = document.getElementById('trakteer-container');
+    if (container) {
+      var btn = document.querySelector('[id^="trbtn-"]');
+      if (btn) container.appendChild(btn);
+    }
+  })();
+</script>
+>>>>>>> Stashed changes
