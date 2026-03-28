@@ -34,13 +34,6 @@ const screenshots = [
       {screenshots.map((s) => (
         <div class="group flex flex-col">
           <div class="overflow-hidden rounded-xl border border-gray-800 bg-gray-900 shadow-lg shadow-black/30 transition-transform duration-200 group-hover:-translate-y-1">
-            <!-- Window chrome -->
-            <div class="flex items-center gap-1.5 px-3 py-2.5 border-b border-gray-800">
-              <span class="h-2.5 w-2.5 rounded-full bg-red-500/60"></span>
-              <span class="h-2.5 w-2.5 rounded-full bg-yellow-500/60"></span>
-              <span class="h-2.5 w-2.5 rounded-full bg-green-500/60"></span>
-              <span class="ml-2 text-xs text-gray-600 font-mono">{s.caption}</span>
-            </div>
             <img
               src={s.src}
               alt={s.alt}
