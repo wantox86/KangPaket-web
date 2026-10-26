@@ -111,7 +111,14 @@ To set up GitHub Pages for a new repo:
 
 ### Download URLs
 
-Download links use GitHub's `releases/latest/download/` endpoint — they always point to the latest release automatically. Only the version label needs manual updating.
+Download links in `src/components/Download.astro` are **versioned** (`releases/download/vX.Y.Z/<asset>`), not `releases/latest/download/`, and asset names can change between releases (v1.1.0: `KangPaket-windows-x86_64.exe`, `KangPaket.app.zip`, `KangPaket-linux-x86_64`). Verify names with `gh release view vX.Y.Z -R wantox86/KangPaket --json assets`.
+
+Steps for each new release:
+
+1. `src/components/Download.astro` — `version`, `releaseDate`, each platform's `sub` label and `href`, and the "is available for" sentence
+2. `src/components/Hero.astro` — version badge
+3. `src/pages/changelog.astro` — new `<ChangelogEntry>` at the top
+4. Check that every download URL returns 200/302 (`curl -sIL -o /dev/null -w '%{http_code}' <url>`)
 
 ---
 
