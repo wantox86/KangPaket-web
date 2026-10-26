@@ -24,6 +24,19 @@ import ChangelogEntry from '../components/ChangelogEntry.astro';
     </div>
 
     <div class="relative">
+      <ChangelogEntry version="v1.1.0" date="October 26, 2026">
+        <ul>
+          <li>New: Cloud Sync — sign in to a KangPaket server and your profiles and environments sync across devices. Accounts are created by the server admin. Logging out removes local data on that device, with a confirmation before switching accounts</li>
+          <li>New: Environments &amp; Variables — use <code>{'{{var}}'}</code> in requests and the Collection Runner, switch environments from a dropdown, and import Postman variables</li>
+          <li>New: Import from cURL — from the File menu, including "Copy as cURL" from browsers</li>
+          <li>Fix: Add buttons in Params, Headers, Body, and Assertions are visible again</li>
+          <li>Fix: Delete button in Environments is no longer cut off</li>
+          <li>Fix: macOS About menu now shows version 1.1.0</li>
+          <li>Fix: Cloud Sync login is no longer lost when the app is closed</li>
+          <li>Upgrade note: app data is now stored per user (macOS: ~/Library/Application Support/KangPaket, Windows: %APPDATA%, Linux: ~/.local/share). Existing data is not migrated, so you need to sign in to Cloud Sync once more</li>
+        </ul>
+      </ChangelogEntry>
+
       <ChangelogEntry version="v1.0.2" date="October 6, 2026">
         <ul>
           <li>New: Assertions tab in the request panel — per-request assertions (status code, response time, body contains, JSON path, headers) evaluated by the Collection Runner</li>
